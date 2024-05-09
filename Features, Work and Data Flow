@@ -1,0 +1,22 @@
+Interface #1:  Set delivery date, scan, retrieve routeID, stop detail
+Interface #2:  Set delivery date, scan, retrieve routeID (no detail)
+Interface #3:  Set delivery date, set routeID, scan, retrieve stop detail
+
+Interface #1:
+Set delivery date with date picker
+Scan barcode
+  Lookup barcode in these tables.columns, in this order
+    tblOrder.Reference1  if no match
+    tblOrder.Reference2  if no match
+    tblOrder.OrderID
+  Successful match gives user indication, sound and visible on screen
+  Unsuccessful gives user indication, sound, visible "no match"
+
+Successful scan
+  Updates tblOrderStatus.Confirmed with dbo.getCXTdate()
+          tblOrderStatus.AtOrigin with dbo.getCXTdate()
+          tblOrderStatus.PickedUp with dbo.getCXTdate()
+  (NOTE:  In future iterations these fields will be updated with different scans)
+  Updates tblOrder.DueTimeTo with date selected with date picker + 21:00
+  Updates tblOrderRouteStops.PostDate with date selected with date picker
+  (orders are created with future dates as product often does not arrive on time so date change is necessary)
