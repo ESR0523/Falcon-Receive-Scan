@@ -9,5 +9,23 @@ RELATIONSHIPS
 tblOrder.OrderID (PKID)=tblOrderStatus.OrderID (PKID)
 tblOrderRouteStops.StampID=tblOrder.OrderID
 
-
+Access Field Name      cxtData Field Name                         Data Type
+ScanCode               tblOrder.Reference1                        (varchar(50))
+                       tblOrder.Reference2                        (varchar(50))
+                       tblOrder.OrderID                           decimal(19,2)
+OrderID                tblOrder.OrderID                           decimal(19,2)
+                       tblOrderStatus.OrderID                     decimal(19,2)
+                       tblOrderRouteStops.StampID                 decimal(19,2)
+RouteID                tblOrderRouteStops.RouteID                 varchar(10)
+DriverID               tblOrderRouteStops.DriverID                int
+Reference1             tblOrder.Reference1                        (varchar(50))
+Reference2             tblOrder.Reference2                        (varchar(50))
+PostDate               tblOrderRouteStops.PostDate                datetime
+CustID                 tblOrder.CustID                            int
+Confirmed              tblOrderStatus.Confirmed                   smalldatetime 
+AtOrigin               tblOrderStatus.AtOrigin                    smalldatetime
+PickedUp               tblOrderStatus.PickedUp                    smalldatetime
+Caller                 tblOrder.Caller                            varchar(50)
+ScanTime               Time scan occurred - dbo.getCXTdate()    
+OriginName             tblOrder.OriginName                        varchar(50)
 
