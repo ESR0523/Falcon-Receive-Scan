@@ -20,3 +20,14 @@ Successful scan
   Updates tblOrder.DueTimeTo with date selected with date picker + 21:00
   Updates tblOrderRouteStops.PostDate with date selected with date picker
   (orders are created with future dates as product often does not arrive on time so date change is necessary)
+  Updates tblOrder.SpecialInst with 'FXTSCAN mm/dd/yyyy hh:mm'
+  If already delivered, deletes from tblOrderStatus.Delivered and tblOrderStatus.POD (may remove this function, TBD)
+
+Display shows
+  Text of barcode, RouteID, delivery date
+
+Interface #2 functions just as Interface #1 except the screen only shows RouteID in very large text
+
+Interface #3 performs all of the same functions except.
+  Successful scan moves order to the RouteID selected, typically an 'OVERFLOW' route.
+  Updates tblOrder.SpecialInst with 'FxtSetRoute mm/dd/yyyy hh:mm' + SpecialInst
