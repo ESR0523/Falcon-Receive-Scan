@@ -1,5 +1,13 @@
 SQL table queried by Access and written to.
 
+TABLES
 tblOrder
 tblOrderStatus
 tblOrderRouteStops
+
+RELATIONSHIPS
+tblOrder.OrderID (PKID)=tblOrderStatus.OrderID (PKID)
+tblOrderRouteStops.StampID=tblOrder.OrderID
+
+
+
