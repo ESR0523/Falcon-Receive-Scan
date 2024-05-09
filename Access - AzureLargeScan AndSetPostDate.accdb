@@ -1,0 +1,52 @@
+Query Name:  Qry Append Passthru to tblScanned  --local table
+INSERT INTO tblScanned ( ScanCode, routeid, driverid, postdate, orderid, custid, reference1, reference2, confirmed, atorigin, pickedup, caller, originname )
+SELECT qryZPASSTHRU.ScanCode AS Expr1, 
+qryZPASSTHRU.routeid AS Expr2, 
+qryZPASSTHRU.driverid AS Expr3, 
+qryZPASSTHRU.postdate AS Expr4, 
+qryZPASSTHRU.orderid AS Expr5, 
+qryZPASSTHRU.custid AS Expr6, 
+qryZPASSTHRU.reference1 AS Expr7, 
+qryZPASSTHRU.reference2 AS Expr8, 
+qryZPASSTHRU.confirmed AS Expr9, 
+qryZPASSTHRU.atorigin AS Expr10, 
+qryZPASSTHRU.pickedup AS Expr11, 
+qryZPASSTHRU.caller AS Expr12, 
+qryZPASSTHRU.originname AS Expr13
+FROM qryZPASSTHRU;
+
+tblScanned
+  Field Name      Data Type
+  PKID            AutoNumber
+  ScanCode        Short Text
+  OrderID         Number
+  RouteID         Short Text
+  DriverID        Number
+  Reference1      Short Text
+  Reference2      Short Text
+  PostDate        Date/Time
+  CustID          Number
+  Confirmed       Date/Time
+  AtOrigin        Date/Time
+  PickedUp        Date/Time
+  Caller          Short Text
+  ScanTime        Date/Time
+  OriginName      Short Text
+
+Query Name:  QRYZPASSTHRU
+cusdbo.Z_PostDateConfirmScan '1CDLV2QAFJ4KTQY','12/29/2023'
+cusdbo.Z_PostDateConfirmScan '[package barcode]','[selected date]'
+
+ZRYZPASSTHRU Property Sheet
+Description
+ODBC Connect Str:  ODBC;Description=CXT_Remote;DRIVER=ODBC Driver 18 for SQL Server;SERVER=cxtremotedata-eus.database.windows.net;UID=0125_RW;PWD=a3-bacf-4eef4762c34c;Trusted_Connection=No;DATABASE=data0125;
+Returns Records:  No
+Log Messages:  No
+ODBC Timeout:  180
+Max Records
+Orientation:  Left-to-Right
+Subdatasheet Name:
+Link Child Fields
+Link Master Fields
+Subdatasheet Height:  0"
+Subdatasheet Expanded:  No
